@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const accessRequestSchema = new mongoose.Schema({
+const userRequestSchema = new mongoose.Schema({
     id: {
         type: String,
         required: true,
@@ -37,6 +37,6 @@ const accessRequestSchema = new mongoose.Schema({
     },
 })
 
-const AccessRequest = mongoose.model('mongoadminrequests', accessRequestSchema)
+const UserRequest = mongoose.model('mongoadminrequests', userRequestSchema)
 
-module.exports = { AccessRequest }
+module.exports = { UserRequest }

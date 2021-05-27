@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
 
-const { AccessRequest } = require('./model')
+const { UserRequest } = require('./model')
 
 const create = async input => {
-    const newAccessRequest = new AccessRequest({
+    const newUserRequest = new UserRequest({
         id: input.id,
         requester: input.requester,
         project: input.project,
@@ -13,20 +13,20 @@ const create = async input => {
         // id: args.id
     })
     try {
-        await newAccessRequest.save()
-        return newAccessRequest
+        await newUserRequest.save()
+        return newUserRequest
     } catch (err) {
-        console.log(`Error in create AccessRequest with text ${input.text}: ${err}`)
+        console.log(`Error in create UserRequest with text ${input.text}: ${err}`)
     }
 }
 
 const list = async () => {
     try {
-        const accessRequests = await AccessRequest.find()
-        if (!accessRequests) return []
-        return accessRequests
+        const userRequests = await UserRequest.find()
+        if (!userRequests) return []
+        return userRequests
     } catch (err) {
-        console.log(`Error in list accessRequests: ${err}`)
+        console.log(`Error in list userRequests: ${err}`)
     }
 }
 

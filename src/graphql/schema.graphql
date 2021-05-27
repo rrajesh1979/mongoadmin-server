@@ -1,4 +1,4 @@
-type AccessRequest {
+type UserRequest {
   id: ID!
   requester: String
   project: String
@@ -7,7 +7,7 @@ type AccessRequest {
   role: String
 }
 
-input CreateAccessRequestInput {
+input CreateUserRequestInput {
   id: ID!
   requester: String!
   project: String!
@@ -17,10 +17,10 @@ input CreateAccessRequestInput {
 }
 
 type Query {
-  listAccessRequests: [AccessRequest]
+  listUserRequests: [UserRequest]
 }
 
 type Mutation {
-  createAccessRequest(input: CreateAccessRequestInput!): AccessRequest
-#  createAccessRequest(id: String, requester: String, project: String, cluster: String, database: String, role: String): AccessRequest
+  createUserRequest(input: CreateUserRequestInput!): UserRequest
+#  createUserRequest(id: String, requester: String, project: String, cluster: String, database: String, role: String): UserRequest
 }
