@@ -10,7 +10,7 @@ const create = async input => {
         cluster: input.cluster,
         database: input.database,
         role: input.role,
-        // id: args.id
+        status: input.status,
     })
     try {
         await newUserRequest.save()

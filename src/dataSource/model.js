@@ -35,6 +35,12 @@ const userRequestSchema = new mongoose.Schema({
         trim: true,
         minlength: 1,
     },
+    status: {
+        type: String,
+        required: true,
+        trim: true,
+        minlength: 1,
+    },
 })
 
 const UserRequest = mongoose.model('mongoadminrequests', userRequestSchema)
