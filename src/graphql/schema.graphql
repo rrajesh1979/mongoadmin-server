@@ -4,6 +4,7 @@ type UserRequest {
   project: String
   cluster: String
   database: String
+  requestType: String
   role: String
   status: String
 }
@@ -14,6 +15,7 @@ input CreateUserRequestInput {
   project: String!
   cluster: String!
   database: String!
+  requestType: String!
   role: String!
   status: String!
 }

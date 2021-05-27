@@ -9,6 +9,7 @@ const create = async input => {
         project: input.project,
         cluster: input.cluster,
         database: input.database,
+        requestType: input.requestType,
         role: input.role,
         status: input.status,
     })

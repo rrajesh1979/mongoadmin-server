@@ -29,6 +29,12 @@ const userRequestSchema = new mongoose.Schema({
         trim: true,
         minlength: 1,
     },
+    requestType: {
+        type: String,
+        required: true,
+        trim: true,
+        minlength: 1,
+    },
     role: {
         type: String,
         required: true,
