@@ -1,0 +1,26 @@
+type AccessRequest {
+  id: ID!
+  requester: String
+  project: String
+  cluster: String
+  database: String
+  role: String
+}
+
+input CreateAccessRequestInput {
+  id: ID!
+  requester: String!
+  project: String!
+  cluster: String!
+  database: String!
+  role: String!
+}
+
+type Query {
+  listAccessRequests: [AccessRequest]
+}
+
+type Mutation {
+  createAccessRequest(input: CreateAccessRequestInput!): AccessRequest
+#  createAccessRequest(id: String, requester: String, project: String, cluster: String, database: String, role: String): AccessRequest
+}
