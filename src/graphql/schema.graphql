@@ -7,6 +7,7 @@ type UserRequest {
   requestType: String
   role: String
   status: String
+  requestedDate: String
 }
 
 input CreateUserRequestInput {
@@ -18,6 +19,7 @@ input CreateUserRequestInput {
   requestType: String!
   role: String!
   status: String!
+  requestedDate: String!
 }
 
 type Query {
@@ -26,4 +28,13 @@ type Query {
 
 type Mutation {
   createUserRequest(input: CreateUserRequestInput!): UserRequest
+  createUserRequestArgs(id: ID
+    requester: String
+    project: String
+    cluster: String
+    database: String
+    requestType: String
+    role: String
+    status: String
+    requestedDate: String): UserRequest
 }
