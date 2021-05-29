@@ -14,7 +14,9 @@
     "apollo-server": "^2.24.1",
     "env-cmd": "^10.1.0",
     "graphql": "^15.5.0",
-    "mongoose": "^5.12.11"
+    "mongodb": "^3.6.8",
+    "mongoose": "^5.12.11",
+    "serverless-appsync-plugin": "^1.11.3"
   },
   "devDependencies": {
     "env-cmd": "^10.1.0",

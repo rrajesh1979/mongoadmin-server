@@ -1,25 +1,27 @@
 type UserRequest {
   id: ID!
   requester: String
-  project: String
-  cluster: String
-  database: String
+#  project: String
+#  cluster: String
+#  database: String
   requestType: String
-  role: String
+#  role: String
   status: String
   requestedDate: String
+  requestDetails: String
 }
 
 input CreateUserRequestInput {
   id: ID!
-  requester: String!
-  project: String!
-  cluster: String!
-  database: String!
-  requestType: String!
-  role: String!
-  status: String!
-  requestedDate: String!
+  requester: String
+#  project: String
+#  cluster: String
+#  database: String
+  requestType: String
+#  role: String
+  status: String
+  requestedDate: String
+  requestDetails: String
 }
 
 type Query {
@@ -30,11 +32,13 @@ type Mutation {
   createUserRequest(input: CreateUserRequestInput!): UserRequest
   createUserRequestArgs(id: ID
     requester: String
-    project: String
-    cluster: String
-    database: String
+#    project: String
+#    cluster: String
+#    database: String
     requestType: String
-    role: String
+#    role: String
     status: String
-    requestedDate: String): UserRequest
+    requestedDate: String
+    requestDetails: String
+  ): UserRequest
 }

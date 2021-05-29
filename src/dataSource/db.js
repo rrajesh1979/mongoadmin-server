@@ -1,18 +1,19 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
-const { UserRequest } = require('./model')
+const { UserRequest } = require('./model');
 
 const create = async input => {
     const newUserRequest = new UserRequest({
         id: input.id,
         requester: input.requester,
-        project: input.project,
-        cluster: input.cluster,
-        database: input.database,
+        // project: input.project,
+        // cluster: input.cluster,
+        // database: input.database,
         requestType: input.requestType,
-        role: input.role,
+        // role: input.role,
         status: input.status,
         requestedDate: input.requestedDate,
+        requestDetails: input.requestDetails,
     })
     try {
         await newUserRequest.save()
@@ -22,18 +23,22 @@ const create = async input => {
     }
 }
 
-const createArgs = async (id, requester, project,
-    cluster, database, requestType, role, status, requestedDate) => {
+const createArgs = async (id, requester,
+                          // project, cluster, database,
+                          requestType,
+                          // role,
+                          status, requestedDate, requestDetails) => {
     const newUserRequest = new UserRequest({
         id: id,
         requester: requester,
-        project: project,
-        cluster: cluster,
-        database: database,
+        // project: project,
+        // cluster: cluster,
+        // database: database,
         requestType: requestType,
-        role: role,
+        // role: role,
         status: status,
         requestedDate: requestedDate,
+        requestDetails: JSON.parse(requestDetails),
     })
     try {
         await newUserRequest.save()
