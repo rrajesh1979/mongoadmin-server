@@ -1,7 +1,8 @@
 const db = require('../dataSource/db')
 
 const Query = {
-    listUserRequests: () => db.list()
+    listUserRequests : () => db.list(),
+    listOpenRequests : () => db.listOpenRequests(),
 }
 
 const Mutation = {

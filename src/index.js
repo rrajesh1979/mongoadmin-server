@@ -1,4 +1,6 @@
 const { ApolloServer, gql } = require('apollo-server')
+const GraphQLJSON = require('graphql-type-json');
+
 const fs = require('fs')
 const mongoose = require('mongoose')
 

@@ -58,4 +58,14 @@ const list = async () => {
     }
 }
 
-module.exports = { list, create, createArgs }
+const listOpenRequests = async () => {
+    try {
+        const userRequests = await UserRequest.find({status: 'OPEN'})
+        if (!userRequests) return []
+        return userRequests
+    } catch (err) {
+        console.log(`Error in list userRequests: ${err}`)
+    }
+}
+
+module.exports = { list, listOpenRequests, create, createArgs }

@@ -1,3 +1,9 @@
+scalar JSON
+
+type RequestDetails {
+  requestDetails: JSON
+}
+
 type UserRequest {
   id: ID!
   requester: String
@@ -25,7 +31,8 @@ input CreateUserRequestInput {
 }
 
 type Query {
-  listUserRequests: [UserRequest]
+  listUserRequests : [UserRequest]
+  listOpenRequests : [UserRequest]
 }
 
 type Mutation {
